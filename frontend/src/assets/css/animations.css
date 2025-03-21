@@ -1,0 +1,306 @@
+/* Space animations and effects */
+
+/* Floating animation */
+@keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .float-fast {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  /* Pulse animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .pulse {
+    animation: pulse 3s ease-in-out infinite;
+  }
+  
+  /* Glow animation */
+  @keyframes glow {
+    0% {
+      filter: drop-shadow(0 0 5px rgba(94, 234, 212, 0.5));
+    }
+    50% {
+      filter: drop-shadow(0 0 15px rgba(94, 234, 212, 0.8));
+    }
+    100% {
+      filter: drop-shadow(0 0 5px rgba(94, 234, 212, 0.5));
+    }
+  }
+  
+  .glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+  
+  .glow-accent {
+    animation: glow-accent 4s ease-in-out infinite;
+  }
+  
+  @keyframes glow-accent {
+    0% {
+      filter: drop-shadow(0 0 5px rgba(232, 121, 249, 0.5));
+    }
+    50% {
+      filter: drop-shadow(0 0 15px rgba(232, 121, 249, 0.8));
+    }
+    100% {
+      filter: drop-shadow(0 0 5px rgba(232, 121, 249, 0.5));
+    }
+  }
+  
+  /* Orbit animation */
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(50px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+  }
+  
+  .orbit {
+    animation: orbit 10s linear infinite;
+  }
+  
+  .orbit-slow {
+    animation: orbit 20s linear infinite;
+  }
+  
+  .orbit-fast {
+    animation: orbit 5s linear infinite;
+  }
+  
+  /* Star twinkle animation */
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+  
+  .twinkle {
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  
+  .twinkle-fast {
+    animation: twinkle 1.5s ease-in-out infinite;
+  }
+  
+  .twinkle-slow {
+    animation: twinkle 5s ease-in-out infinite;
+  }
+  
+  /* Rocket launch animation */
+  @keyframes launch {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    20% {
+      transform: translateY(0) scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-1000px) scale(0.5);
+      opacity: 0;
+    }
+  }
+  
+  .launch {
+    animation: launch 3s ease-out forwards;
+  }
+  
+  /* Shooting star animation */
+  @keyframes shooting-star {
+    0% {
+      transform: translateX(0) translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(300px) translateY(300px);
+      opacity: 0;
+    }
+  }
+  
+  .shooting-star {
+    animation: shooting-star 3s linear infinite;
+  }
+  
+  /* Space station rotation */
+  @keyframes rotate-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .rotate-slow {
+    animation: rotate-slow 60s linear infinite;
+  }
+  
+  .rotate-medium {
+    animation: rotate-slow 30s linear infinite;
+  }
+  
+  .rotate-fast {
+    animation: rotate-slow 15s linear infinite;
+  }
+  
+  /* Nebula clouds movement */
+  @keyframes nebula-move {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+  
+  .nebula-bg {
+    animation: nebula-move 120s ease infinite alternate;
+  }
+  
+  /* Thruster animation */
+  @keyframes thruster-pulse {
+    0%, 100% {
+      transform: scaleY(0.8);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scaleY(1.2);
+      opacity: 1;
+    }
+  }
+  
+  .thruster {
+    animation: thruster-pulse 0.5s ease-in-out infinite;
+  }
+  
+  /* Loading spinner */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .spinner {
+    animation: spin 1.5s linear infinite;
+  }
+  
+  /* Appear animation for page transitions */
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .appear {
+    animation: appear 0.5s ease-out forwards;
+  }
+  
+  .appear-delay-1 {
+    animation: appear 0.5s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+  
+  .appear-delay-2 {
+    animation: appear 0.5s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+  
+  .appear-delay-3 {
+    animation: appear 0.5s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+  
+  /* Button hover effects */
+  .btn {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+  }
+  
+  .btn:hover::after {
+    animation: btn-shine 1.5s;
+  }
+  
+  @keyframes btn-shine {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Card hover effects */
+  .card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--secondary), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover::before {
+    transform: scaleX(1);
+  }

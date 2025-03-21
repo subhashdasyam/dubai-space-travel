@@ -1,0 +1,570 @@
+/* CSS-only space art and visual elements */
+
+/* Star field background */
+.star-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    background: radial-gradient(ellipse at center, var(--space-deep) 0%, #030712 100%);
+  }
+  
+  /* Stars */
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+  
+  .star.small {
+    width: 1px;
+    height: 1px;
+  }
+  
+  .star.medium {
+    width: 2px;
+    height: 2px;
+  }
+  
+  .star.large {
+    width: 3px;
+    height: 3px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Nebula cloud effect */
+  .nebula {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.3;
+  }
+  
+  .nebula.pink {
+    background-color: var(--space-nebula-pink);
+  }
+  
+  .nebula.blue {
+    background-color: var(--space-nebula-blue);
+  }
+  
+  .nebula.teal {
+    background-color: var(--space-nebula-teal);
+  }
+  
+  /* Burj Khalifa CSS Art */
+  .burj-khalifa {
+    position: relative;
+    width: 50px;
+    height: 500px;
+    margin: 0 auto;
+  }
+  
+  .burj-base {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 40px;
+    background-color: #9ca3af;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .burj-body {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 300px;
+    background: linear-gradient(180deg, #64748b 0%, #334155 100%);
+  }
+  
+  .burj-body::before, .burj-body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 260px;
+    background: linear-gradient(180deg, #64748b 0%, #334155 100%);
+  }
+  
+  .burj-body::before {
+    left: -40px;
+  }
+  
+  .burj-body::after {
+    right: -40px;
+  }
+  
+  .burj-middle {
+    position: absolute;
+    bottom: 340px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 100px;
+    background: linear-gradient(180deg, #64748b 0%, #334155 100%);
+  }
+  
+  .burj-spire {
+    position: absolute;
+    bottom: 440px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 60px;
+    background: linear-gradient(180deg, #f1f5f9 0%, #94a3b8 100%);
+  }
+  
+  .burj-antenna {
+    position: absolute;
+    bottom: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background-color: #cbd5e1;
+  }
+  
+  .burj-lights {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    height: 320px;
+  }
+  
+  .burj-light {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: twinkle 3s infinite alternate;
+  }
+  
+  /* Moon Base CSS Art */
+  .moon-base {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  
+  .moon-surface {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(90deg, #9ca3af, #d1d5db, #9ca3af);
+    border-radius: 50% 50% 0 0;
+  }
+  
+  .moon-crater {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #6b7280;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .moon-dome {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 50px;
+    background-color: rgba(203, 213, 225, 0.2);
+    border: 2px solid #cbd5e1;
+    border-radius: 70px 70px 0 0;
+  }
+  
+  .moon-building {
+    position: absolute;
+    bottom: 40px;
+    width: 30px;
+    height: 60px;
+    background-color: #64748b;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .moon-building.left {
+    left: 20px;
+  }
+  
+  .moon-building.right {
+    right: 20px;
+  }
+  
+  .moon-antenna {
+    position: absolute;
+    bottom: 100px;
+    width: 2px;
+    height: 30px;
+    background-color: #94a3b8;
+  }
+  
+  .moon-antenna.left {
+    left: 35px;
+  }
+  
+  .moon-antenna.right {
+    right: 35px;
+  }
+  
+  /* Mars Colony CSS Art */
+  .mars-colony {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  
+  .mars-surface {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(90deg, #b91c1c, #dc2626, #b91c1c);
+    border-radius: 10% 10% 0 0;
+  }
+  
+  .mars-dome {
+    position: absolute;
+    bottom: 40px;
+    width: 60px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid #e5e7eb;
+    border-radius: 60px 60px 0 0;
+  }
+  
+  .mars-dome.large {
+    width: 80px;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .mars-dome.left {
+    left: 20px;
+  }
+  
+  .mars-dome.right {
+    right: 20px;
+  }
+  
+  .mars-tunnel {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    width: 120px;
+    height: 10px;
+    background-color: #6b7280;
+    transform: translateX(-50%);
+  }
+  
+  /* Space Station CSS Art */
+  .space-station {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  
+  .station-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: #64748b;
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .station-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(75deg);
+    width: 200px;
+    height: 200px;
+    border: 10px solid #64748b;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .station-module {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background-color: #94a3b8;
+    border-radius: 5px;
+  }
+  
+  .station-module.top {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .station-module.bottom {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .station-module.left {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+  
+  .station-module.right {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+  
+  .station-solar-panel {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    background: linear-gradient(90deg, #0ea5e9, #0284c7);
+    border: 1px solid #0284c7;
+  }
+  
+  .station-solar-panel.left {
+    top: 50%;
+    left: -60px;
+    transform: translateY(-50%);
+  }
+  
+  .station-solar-panel.right {
+    top: 50%;
+    right: -60px;
+    transform: translateY(-50%);
+  }
+  
+  /* Spaceship CSS Art */
+  .spaceship {
+    position: relative;
+    width: 120px;
+    height: 50px;
+    margin: 0 auto;
+  }
+  
+  .ship-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(90deg, #64748b, #94a3b8, #64748b);
+    border-radius: 50% 50% 10% 10%;
+  }
+  
+  .ship-cockpit {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 20px;
+    background-color: rgba(14, 165, 233, 0.5);
+    border: 2px solid #0ea5e9;
+    border-radius: 50% 50% 0 0;
+  }
+  
+  .ship-wing {
+    position: absolute;
+    bottom: 10px;
+    width: 40px;
+    height: 15px;
+    background-color: #475569;
+    border-radius: 5px;
+  }
+  
+  .ship-wing.left {
+    left: -20px;
+    transform: skewY(-15deg);
+  }
+  
+  .ship-wing.right {
+    right: -20px;
+    transform: skewY(15deg);
+  }
+  
+  .ship-thruster {
+    position: absolute;
+    bottom: -10px;
+    width: 10px;
+    height: 15px;
+    background-color: #475569;
+    border-radius: 0 0 50% 50%;
+  }
+  
+  .ship-thruster.left {
+    left: 30px;
+  }
+  
+  .ship-thruster.middle {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .ship-thruster.right {
+    right: 30px;
+  }
+  
+  .ship-flame {
+    position: absolute;
+    bottom: -20px;
+    width: 6px;
+    height: 15px;
+    background: linear-gradient(to bottom, #f97316, #f59e0b, #fbbf24);
+    border-radius: 0 0 50% 50%;
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.8);
+    animation: thruster-pulse 0.5s infinite;
+  }
+  
+  .ship-flame.left {
+    left: 32px;
+  }
+  
+  .ship-flame.middle {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .ship-flame.right {
+    right: 32px;
+  }
+  
+  /* Venus Cloud City CSS Art */
+  .venus-cloud-city {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  
+  .venus-clouds {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(180deg, rgba(249, 115, 22, 0.5), rgba(245, 158, 11, 0.8));
+    border-radius: 50% 50% 0 0;
+    box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .venus-platform {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 20px;
+    background-color: #94a3b8;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .venus-building {
+    position: absolute;
+    bottom: 80px;
+    width: 40px;
+    background-color: #64748b;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .venus-building.central {
+    height: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .venus-building.left {
+    height: 60px;
+    left: 60px;
+  }
+  
+  .venus-building.right {
+    height: 60px;
+    right: 60px;
+  }
+  
+  .venus-dome {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid #e5e7eb;
+    border-radius: 60px 60px 0 0;
+  }
+  
+  .venus-dome.central {
+    bottom: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .venus-dome.left {
+    bottom: 140px;
+    left: 60px;
+    transform: translateX(-50%);
+  }
+  
+  .venus-dome.right {
+    bottom: 140px;
+    right: 20px;
+  }
+  
+  .venus-balloon {
+    position: absolute;
+    width: 10px;
+    height: 60px;
+    bottom: 80px;
+  }
+  
+  .venus-balloon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+  }
+  
+  .venus-balloon::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 30px;
+    background-color: #cbd5e1;
+  }
+  
+  .venus-balloon.left {
+    left: 20px;
+    animation: float 10s ease-in-out infinite;
+  }
+  
+  .venus-balloon.right {
+    right: 20px;
+    animation: float 12s ease-in-out 1s infinite;
+  }

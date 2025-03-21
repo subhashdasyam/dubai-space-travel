@@ -1,0 +1,186 @@
+/* Custom spaceship cursor */
+
+/* Remove default cursor */
+* {
+    cursor: none;
+  }
+  
+  /* Spaceship cursor base */
+  .spaceship-cursor {
+    position: fixed;
+    width: 30px;
+    height: 24px;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease;
+  }
+  
+  /* Spaceship cursor components */
+  .cursor-ship {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .cursor-body {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 8px;
+    background: linear-gradient(90deg, #64748b, #94a3b8, #64748b);
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .cursor-cockpit {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 6px;
+    background-color: rgba(14, 165, 233, 0.7);
+    border: 1px solid #0ea5e9;
+    border-radius: 50% 50% 0 0;
+  }
+  
+  .cursor-wing {
+    position: absolute;
+    top: 45%;
+    width: 8px;
+    height: 4px;
+    background-color: #475569;
+    border-radius: 1px;
+  }
+  
+  .cursor-wing.left {
+    left: 15%;
+    transform: skewY(-15deg);
+  }
+  
+  .cursor-wing.right {
+    right: 15%;
+    transform: skewY(15deg);
+  }
+  
+  .cursor-thruster {
+    position: absolute;
+    bottom: 10%;
+    width: 4px;
+    height: 5px;
+    background-color: #475569;
+    border-radius: 0 0 50% 50%;
+  }
+  
+  .cursor-thruster.left {
+    left: 40%;
+  }
+  
+  .cursor-thruster.right {
+    right: 40%;
+  }
+  
+  .cursor-flame {
+    position: absolute;
+    bottom: 0;
+    width: 2px;
+    height: 6px;
+    background: linear-gradient(to bottom, #f97316, #f59e0b, #fbbf24);
+    border-radius: 0 0 50% 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease, height 0.2s ease;
+  }
+  
+  .cursor-flame.left {
+    left: 41%;
+  }
+  
+  .cursor-flame.right {
+    right: 41%;
+  }
+  
+  /* Cursor states */
+  /* Hover state - show flames */
+  .spaceship-cursor.hover .cursor-flame {
+    opacity: 1;
+    animation: thruster-pulse 0.5s infinite;
+  }
+  
+  /* Click state - moving forward */
+  .spaceship-cursor.click {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  
+  .spaceship-cursor.click .cursor-flame {
+    opacity: 1;
+    height: 12px;
+    animation: thruster-pulse 0.3s infinite;
+  }
+  
+  /* Input state - stationary scanning */
+  .spaceship-cursor.input {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  
+  .spaceship-cursor.input::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    animation: scan 1.5s linear infinite;
+  }
+  
+  @keyframes scan {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+  
+  /* Cursor trail effect */
+  .cursor-trail {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(14, 165, 233, 0.3);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+  }
+  
+  /* Different cursor appearance for links and buttons */
+  .spaceship-cursor.clickable {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  
+  .spaceship-cursor.clickable .cursor-cockpit {
+    background-color: rgba(20, 184, 166, 0.7);
+    border-color: var(--secondary);
+  }
+  
+  /* Accessibility - show default cursor for those who need it */
+  .default-cursor * {
+    cursor: auto !important;
+  }
+  
+  .default-cursor .spaceship-cursor,
+  .default-cursor .cursor-trail {
+    display: none !important;
+  }
